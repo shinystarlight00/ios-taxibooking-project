@@ -1,0 +1,331 @@
+/*
+ File.strings
+ TaxiNow
+ 
+ Created by Harshal Shah on 01/05/18.
+ Copyright © 2018 Jigs. All rights reserved.
+ */
+"APPLICATION NAME"="Huguo";
+
+"SELECT_PHOTO"="Choisir une photo";
+"TAKE_PHOTO"="Prendre une photo";
+"CANCEL"="ANNULER";
+"OK"="OK";
+"CAM_NOT_AVAILABLE" = "Caméra non disponible";
+"PLEASE_FIRST_NAME"="Votre prénom.";
+"PLEASE_LAST_NAME"="Votre nom";
+"PLEASE_EMAIL"="Votre adresse e-mail";
+"PLEASE_NUMBER"="Votre téléphone";
+"PLEASE_PASSWORD"="Votre mot de passe";
+"PLEASE_PASSWORD_LENGTH"="Le mot de passe doit être à 6 chiffres !";
+"PLEASE_VALID_EMAIL"="Merci de mettre un mail valide";
+"REGISTER_SUCCESS"="Enregistré avec succès!";
+"REGISTER_FAIL"="L'inscription a échoué !";
+
+"LOGIN_SUCCESS"="Bienvenue";
+"LOGIN_FAIL"="La connexion a échoué, veuillez réessayer ..";
+
+"THING_SUCCESS"="Ajouté avec succès vos produits";
+"THING_FAIL"="Échec, Veuillez réessayer.";
+
+"NOT_VALID_LOCATION" = "La localisation n'est pas valide!";
+"ALREADY_LOGIN"="Veuillez patienter pendant que nous vous connectons .";
+"PLEASE_WAIT"="S'il vous plaît, attendez...";
+
+//////////// Loading Titles
+
+
+"COTACCTING_SERVICE_PROVIDER"="Recherche de taxis à proximité ..";
+"LOADING"="CHARGEMENT...";
+"LOGIN"="se connecter ... "; //" VEUILLEZ PATIENTER";
+
+"WAITING_FOR_ADMIN_CONFIRM"="VOTRE APPROBATION EST TOUJOURS EN COURS !";
+"REQUESTING"="DEMANDE";
+"REVIEWING"="RÉVISION";
+"CANCLEING"="ANNULATION";
+"EDITING"="Mise à jour";
+"PLEASE_WAIT"="Veuillez patienter";
+"GET_PROVIDER"="Obtenir un chauffeur";
+
+//
+///////////////// Toast Title
+//
+"SUCESS_REFERRAL" = "Code de référence appliqué!";
+"RATING"= "Merci pour Facture";
+"PASSWORD_SENT"="Le mot de passe vous sera envoyé à votre adresse mail";
+"ERROR"="Oops ! Une erreur s'est produite !";
+"SELECT_TYPE" = "Choisir un modèle";
+"REQUEST_CANCEL" = "Votre demande est annulée avec succès.";
+"NO_WALKER" = "Nous n'avons pas trouvé de taxis à proximité";
+"PROFILE_EDIT_SUCESS" = "Votre profil a été mis à jour avec succés";
+"NO_REFERRAL" = "L'tilisateur(trice) n'a pas de code de référence!";
+
+//
+/////////////  RegisterVC & Profile
+//
+"INFO_EMAIL"="Vérification adresse mail, modification impossible!";
+"This field is not editable."="Ce champ n'est pas modifiable!";
+"NOT_MATCH_RETYPE"="La confirmation du nouveau mot de passe ne correspond pas!";
+"Registering"="Enregistrement...";
+//
+//
+/////// LoginVC
+"All Copyrights Reserved By Taxi any time"="Tous les droits d'auteur réservés à HUGUO";
+"Sign In"="Se connecter";
+"Sign in With"="Se connecter avec";
+"SIGN IN"="SE CONNECTER";
+"Email"="Email";
+"Password"="Mot de passe";
+"Forgot Password"="Mot de passe oublié ?";
+"Network Status"="État du réseau";
+"NO_INTERNET"="Réseau indisponible!";
+
+/////// RegisterVC
+//"Register"="INSCRIPTION";
+"Register"="Inscription";
+"FIRST NAME*"="PRÉNOM*";
+"LAST NAME*"="NOM*";
+"EMAIL*"="EMAIL*";
+"PASSWORD*"="MOT DE PASSE*";
+"NUMBER*"="TELEPHONE*";
+"I agree to the terms and conditions"="J'accepte les termes et conditions";
+"NEXT"="PROCHAIN";
+"Done"="TERMINÉ";
+"Select Country"="Choisissez le pays";
+"UPLOAD PICTURE FROM"="VOTRE PHOTO À PARTIR DE";
+
+///// TermVC
+//"Terms & Conditions"="Termes et conditions";
+
+///// ApplyReferralCodeVC
+"Referral Code"="Code de Parrainage";
+"Enter Referral Code"="Entrer le code de parrainage";
+"Referral_Msg"="Vous pouvez ajouter un code de parrainage fourni par votre ami ici pour obtenir des crédits gratuits. Si vous n'en avez pas ou si vous ne voulez pas les insérer, cliquez simplement sur le bouton Ignorer ci-dessous.";
+"SKIP"="IGNORER ";
+"ADD"="AJOUTER";
+"PLEASE_CODE"="Entrez le code vérification du téléphone.";
+///// PaymentVC
+"ADD PAYMENT"="Paiement";
+"Adding cards"="Ajouter des cartes ...";
+"PLEASE_CREDIT_CARD_NUMBER"="Numéro de C.B";
+"PLEASE_MONTH"="Mois";
+"PLEASE_YEAR"="Année";
+"PLEASE_CVV"="CVV";
+"ERROR"="Oups! Une erreur est survenue !";
+
+///// SliderVC
+"Profile"="  Profil";
+"History"="  Historique";
+"Payment"="  Paiement";
+"Promotions"="  Promotions";
+"LOG OUT"="  Logout";
+"Logout"="  Logout";
+"Logout Msg"="Êtes-vous sûr de vouloir vous déconnecter ?";
+//"Are Sure You want to log Out" = "Êtes-vous sûr?";
+"YES"="Oui";
+"NO"="Non";
+
+///// EastimateFareVC
+
+"Fare Calulator"="Calculateur de tarif";
+"Destination Address"="Type de destination";
+"Home Address"="Domicile";
+"Work Address"="Travail";
+
+///// ProfileVC
+"FIRST NAME"="PRÉNOM";
+"LAST NAME"="NOM";
+"EMAIL"="EMAIL";
+"PHONE"="TÉLÉPHONE";
+"CURRENT PASSWORD"="MOT DE PASSE ACTUEL";
+"NEW PASSWORD"="NOUVEAU MOT DE PASSE";
+"CONFIRM PASSWORD"="CONFIRMEZ LE MOT DE PASSE";
+"UPDATE PROFILE"="METTRE À JOUR LE PROFIL";
+"EDIT PROFILE"="EDITER LE PROFIL";
+
+//BookingVc
+"Booking"="Mes réservations";
+
+///// ReferralCodeVC
+"Referral Code"="Code de Parrainage";
+"Your Referral Code is"="Votre code de référence est";
+"Your Referral Credit"="Votre crédit de référence";
+"Share With your friend"="PARTAGEZ AVEC VOTRE AMI";
+"My Referral code is"="Mon code de référence est";
+
+///// HistoryVC
+
+"Invoice"="Facture";
+"BASE PRICE"="Prix ​​de base";
+"DISTANCE COST"="Coût de distance";
+"TIME COST" = "Coût en temps";
+"PROMO BOUNCE" = "Bonus Promo";
+"REFERRAL BOUNCE" = "Bonus de parrainage";
+"per mile" = "Par kilomtre";
+"per mins" = "par minute(s)";
+"Total Due" = "Total";
+"Close"="FERMER";
+"Mins" = "minute(s)";
+
+///// FeedBackVC
+"Feedback"="Facture";
+"CONFIRM"="CONFIRMER";
+"COMMENT1"="COMMENTAIRE";
+"COMMENT"="Votre retour d'expérience";
+"Submit"="SOUMETTRE";
+"PLEASE_RATE"="Note pour le chauffeur.";
+
+///// PickUpVC
+"PICK ME UP"="MA POSITION";
+"GET FARE ESTIMATE"="Obtenir une estimation de prix";
+"MIN FARE"="PRIX MNIMUM";
+"ETA"="POUR VENIR";
+"MAX SIZE"="PERSONNE(S)";
+"Select Your Payment Type"="Choisir le type de paiement";
+"Request"="DEMAZNDE";
+"SELECT SERVICE YOU NEED"="CHOISIR UN SERVICE";
+"SEARCH"="Lieu de prise en charge";
+"REQUESTING"="Contacter un chauffeur ...";
+"RATE CARD"="CARTE BLEU";
+"Base Price :"="Prix de base :";
+"Distance Cost :"="Coût de distance(Par km) :";
+"Time Cost :"="coût de temps(Par min) :";
+"Rate_card_note"="Les tarifs de l'aéroport peuvent différer. Des frais supplémentaires peuvent s'appliquer!";
+"Alert Message" ="Merci pour votre reservation..Nous vous contacterons trÈs rapidement pour la confirmation.";
+
+
+///// ProviderDetailsVC
+"Min"="min";
+"CALL"="APPEL";
+"DRIVER ACCEPTED THE JOB"="Le conducteur a accepté le job";
+"DRIVER HAS STARTED TOWARDS YOU"="Départ vers le lieu de prise en charge";
+"DRIVER HAS ARRIVED AT YOUR PLACE"="Arrivé sur le lieu de prise en charge";
+"YOUR TRIP HAS BEEN STARTED"="Votre voyage commence.";
+"YOUR TRIP IS COMPLETED"="Votre voyage est terminé.";
+"Promo Code"="Code promo";
+"Enter Promo Code"="Saisir le code promotionnel";
+"APPLY"="APPLIQUER";
+"Card"="Carte";
+"Cash"="Cash";
+"Please Promo"="entrer le code promo.";
+"CANCEL_REQUEST"="Voulez vous annuler la demande ?";
+
+
+// ERROR CODE :
+
+"1"="Ce mail n'est pas enregistré!";
+"2"="Le nom est requis!";
+"3"="L'âge est requis!";
+"4"="La race est requise!";
+"5"="La clé a expiré!";
+"6"="L'identifiant est manquant!";
+"7"="L'image est requise!";
+"8"="entrée invalide!";
+"9"="Clé expiré!";
+"10"="L'identifiant est introuvable!";
+"11"="Aucune clé valide!";
+"12"="Aucun service trouvé!";
+"13"="Chauffeur non trouvé!";
+"14"="L'identifiant unique PayPal est manquant!";
+
+"15"="Les numéros de contact sont requis!";
+"16"="eta est requis.";
+"17"="Aucun crédit trouvé";
+"18"="Déconnexion avec succès.";
+"19"="Identifiant de demande est requis!";
+"20"="Déjà évalué!";
+"21"="La promenade n'est pas terminée";
+"22"="L'ID de la promenade ne correspond pas à l'ID chien!";
+"23"="ID marcheur introuvable!";
+"24"="Numéro de téléphone invalide!";
+"25"="Le numéro de téléphone est requis!";
+"26"="L'identifiant unique de connexion sociale doit être requis.";
+"27"="Adresse e-mail déjà enregistrée!";
+"28"="Le champ Mot de passe est requis!";
+"29"="Le champ Email est obligatoire!";
+"30"="Le champ Prénom est requis!";
+"31"="Le champ Nom de famille est obligatoire!";
+"32"="La clé de notification push est requis!";
+"33"="Le type de périphérique doit être Android ou iOS!";
+"34"="Le type de connexion est requis!";
+"35"="Connexion par incompatibilité!";
+"36"="Nom d'utilisateur(trice) et mot de passe invalide!";
+"37"="Aucun utilisateur(trice) enregistré!";
+"38"="L'utilisateur (trice) n'a pas d'enregistrement social valide";
+"39"="Les quatre derniers chiffres du numéro de carte sont manquants!";
+"40"="La clé de paiement unique est manquant!";
+
+
+"41"="Impossible de créer l'ID client!";
+"42"="L'identifiant de carte unique est manquant!";
+"43"="L'ID de carte et l'ID utilisateur(trice) ne correspondent pas!";
+"44"="Carte non trouvée!";
+"45"="Cet utilisateur(trice) n'a pas de code de référence!";
+"46"="Aucune carte trouvée!";
+"47"="Ancien mot de passe invalide!";
+"48"="L'ancien mot de passe ne doit pas être vide!";
+"49"="les points de localisation sont manquants!";
+"50"="ID de l'utilisateur(trice) non trouvé!";
+
+"51"="L'ID de demande ne correspond pas à l'ID utilisateur(trice)!";
+"52"="ID de demande introuvable!";
+"53"="ID utilisateur(trice) non trouvé!";
+"54"="Aucun marcheur trouvé!";
+"55"="Aucun chauffeur trouvé pour le service demandée!";
+"56"="Aucun fournisseur de services trouvé!";
+"57"="L'identifiant du fournisseur est manquant!";
+"58"="Votre demande précédente est en attente!";
+"59"="Veuillez d'abord ajouter une carte de paiement!";
+"60"="Aucun fournisseur de services trouvé pour la demande planifiée!";
+
+"61"="Code promotionnel incorrect!";
+"62"="Vous ne pouvez pas appliquer plusieurs codes pour un seul déplacement!";
+"63"="Le code promotionnel a été appliqué avec succès!";
+"64"="Le code promotionnel n'est pas disponible!";
+"65"="Code promotionnel déjà utilisé!";
+"66"="La fonction de promotion n'est pas active pour le paiement par carte!";
+"67"="La fonction de promotion n'est pas active pour le paiement en espèces!";
+"68"="La fonctionnalité de promotion n'est pas active.";
+"69"="Vous ne pouvez pas appliquer de code promotionnel sans créer de demande!";
+"70"="Le mode de paiement est paypal.";
+
+"71"="Aucun fournisseur de services dans votre région actuellement.";
+"72"="Vous êtes déjà endetté.";
+"73"="La distance est requise!";
+"74"="Le temps est requis!";
+"75"="L'ID de la demande ne correspond pas à l'ID utilisateur(trice)!";
+"76"="Voyage en cours!";
+"77"="Aucun voyage en cours trouvé!.";
+"78"="Recherche de chauffeur";
+"79"="Aucun fournisseur de service n'est disponible actuellement!";
+"80"="Chauffeur non encore confirmé!";
+
+
+
+"81"="Aucun fournisseur de services trouvé autour de vous!";
+"82"="Le fuseau horaire est requis!";
+"83"="La date et l'heure de l'horaire doivent être obligatoires.";
+"84"="Vous ne pouvez pas créer l'agenda sur deux semaines à partir d'aujourd'hui!";
+"85"="mettre à jour";
+"86"="Mode de paiement non mis à jour!";
+"87"="Destination définie avec succès!";
+"88"="Vous ne pouvez pas créer d'événement plus tôt que 14 jours!";
+"89"="Vous avez invité les membres maximum pour l'événement!";
+"90"="Veuillez changer braintree comme passerelle par défaut!";
+
+
+"91"="Vous avez déjà appliqué le code reference!";
+"92"="Processus de référence terminé avec succès!";
+"93"="Vous ne pouvez pas appliquer ce code de reference!";
+"94"="Code de référence incorrect!";
+"95"="Vous avez ignoré le processus de référence.";
+"96"="Aucun service trouvé!";
+"97"="Le type de paiement doit être requis!";
+"98"="L'identifiant de l'événement est manquant!";
+"99"="Désolé, vous ne pouvez pas supprimer un événement passé ou en cours!";
+"100"="Événement non trouvé!";
+"101"="L'événement a bien été supprimé!";
+"200"="Vérifier que le code est invalide.";
+
+
+

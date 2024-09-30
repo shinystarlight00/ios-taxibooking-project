@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[PickUpVC carouselDidEndScrollingAnimation:]:PickUpVC.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "lblServiceType.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

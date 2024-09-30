@@ -1,0 +1,327 @@
+/* 
+  Localizable.strings
+  UberNewUser
+
+  Created by Elluminati - macbook on 27/09/14.
+  Copyright (c) 2014 Jigs. All rights reserved.
+*/
+
+"APPLICATION NAME"="Taxi any time";
+
+"SELECT_PHOTO"="Select Photo";
+"TAKE_PHOTO"="Take Photo";
+"CANCEL"="CANCEL";
+"OK"="OK";
+"CAM_NOT_AVAILABLE" = "Camera Not Available";
+"PLEASE_FIRST_NAME"="Please enter a first name.";
+"PLEASE_LAST_NAME"="Please enter a last name.";
+"PLEASE_EMAIL"="Please enter a email address.";
+"PLEASE_NUMBER"="Please enter a number.";
+"PLEASE_PASSWORD"="Please enter a password.";
+"PLEASE_PASSWORD_LENGTH"="Your password must be 6 digit.";
+"PLEASE_VALID_EMAIL"="Please enter a valid email address.";
+"REGISTER_SUCCESS"="Successfully registered!";
+"REGISTER_FAIL"="Registration failed Please try again.";
+
+"LOGIN_SUCCESS"="Welcome ";
+"LOGIN_FAIL"="Login failed, Please try again ..";
+
+"THING_SUCCESS"="Successfully Added your things.";
+"THING_FAIL"="Failed Please try again.";
+
+"NOT_VALID_LOCATION" = "Not a Valid Location";
+"ALREADY_LOGIN"="Please wait while we sign you in ..";
+"PLEASE_WAIT"="Please wait...";
+
+//////////// Loading Titles
+
+
+"COTACCTING_SERVICE_PROVIDER"="Contacting nearby taxis..";
+"LOADING"="LOADING...";
+"LOGIN"="logging in...";//"PLEASE WAIT, WHILE WE LOG YOU IN";
+
+"WAITING_FOR_ADMIN_CONFIRM"="YOUR APPROVAL IS STILL IN PROCESS, WE WILL CONTACT YOU SOON.";
+"REQUESTING"="REQUESTING";
+"REVIEWING"="REVIEWING";
+"CANCLEING"="CANCELLING";
+"EDITING"="Updating";
+"PLEASE_WAIT"="Please wait";
+"GET_PROVIDER"="Getting Provider";
+
+
+/////////////// Toast Title
+
+"SUCESS_REFERRAL" = "Referral Code applied";
+"RATING"= "Thank you for your feedback";
+"PASSWORD_SENT"="Your password has been emailed to your registered address";
+"ERROR"="Oops ! An error occured, Please Try Again.";
+"SELECT_TYPE" = "Please select a type.";
+"REQUEST_CANCEL" = "Your request is canceled successfully.";
+"NO_WALKER" = "We weren't able to find any taxis nearby";
+"PROFILE_EDIT_SUCESS" = "Your profile has been updated successfully";
+"NO_REFERRAL" = "This user does not have a referral code.";
+
+
+///////////  RegisterVC & Profile
+
+"INFO_EMAIL"="Please verify your e-mail address,you will not be able to modify it in future.";
+"This field is not editable."="This field is not editable.";
+"NOT_MATCH_RETYPE"="Confirm password do not match with new password.";
+"Registering"="Registering...";
+
+
+///// LoginVC
+"SIGN IN"="  SIGN IN";
+"Email"="Email";
+"Password"="Password";
+"Forgot Password"="Forgot Password?";
+"Network Status"="Network Status";
+"NO_INTERNET"="Sorry, network is not available. Please try again later.";
+
+///// RegisterVC
+"Register"="  REGISTER";
+"FIRST NAME*"="FIRST NAME*";
+"LAST NAME*"="LAST NAME*";
+"EMAIL*"="EMAIL*";
+"PASSWORD*"="PASSWORD*";
+"NUMBER*"="NUMBER*";
+"I agree to the terms and conditions"="I agree to the terms and conditions";
+"NEXT"="NEXT";
+"Done"="DONE";
+"Select Country"="Select Country";
+
+///// TermVC
+"Terms & Conditions"="  Terms & Conditions";
+
+///// ApplyReferralCodeVC
+"Referral Code"="  Referral Code";
+"Enter Referral Code"="Enter Referral Code";
+"Referral_Msg"="You can add referral code provided by your friend here to get free credits. If you do not have one or don't want to insert they just click on Skip button below.";
+"SKIP"="SKIP";
+"ADD"="ADD";
+
+///// PaymentVC
+"ADD PAYMENT"="  Payment";
+"Adding cards"="Adding cards...";
+"PLEASE_CREDIT_CARD_NUMBER"="Please enter credit card number.";
+"PLEASE_MONTH"="Please enter month.";
+"PLEASE_YEAR"="Please enter year.";
+"PLESE_CVV"="Please enter CVV.";
+"ERROR"="Oops!An error occured,Please try again.";
+
+///// SliderVC
+"Profile"="  Profile";
+"History"="  History";
+"Payment"="  Payment";
+"Promotions"="  Promotions";
+"Logout"="  Logout";
+"Logout Msg"="Are you sure you want to logout ?";
+"Yes"="Yes";
+"No"="No";
+
+///// EastimateFareVC
+
+"Fare Calulator"="  Fare Calulator";
+"Destination Address"="Type destination location";
+"Home Address"="Home Address";
+"Work Address"="Work Address";
+
+///// ProfileVC
+"FIRST NAME"="FIRST NAME";
+"LAST NAME"="LAST NAME";
+"EMAIL"="EMAIL";
+"PHONE"="PHONE";
+"CURRENT PASSWORD"="CURRENT PASSWORD";
+"NEW PASSWORD"="NEW PASSWORD";
+"CONFORM PASSWORD"="CONFORM PASSWORD";
+"UPDATE PROFILE"="UPDATE PROFILE";
+"EDIT PROFILE"="EDIT PROFILE";
+
+//BookingVc
+"Booking"="My Bookings";
+
+///// ReferralCodeVC
+"Referral Code"="  Referral Code";
+"Your Referral Code is"="Your Referral Code is ";
+"Your Referral Credit"="Your Referral Credit";
+"Share With your friend"="SHARE WITH YOUR FRIEND";
+"My Referral code is"="My Referral code is";
+
+///// HistoryVC
+
+"Invoice"="Invoice";
+"BASE PRICE"="Base Price";
+"DISTANCE COST"="Distance Cost";
+"TIME COST" = "Time Cost";
+"PROMO BOUNCE" = "Promo Bonus";
+"REFERRAL BOUNCE" = "Referral Bonus";
+"per mile" = "per mile";
+"per mins" = "per min";
+"Total Due" = "Total";
+"Close"="CLOSE";
+"Mins" = "min";
+
+///// FeedBackVC
+"Feedback"="  Feedback";
+"CONFIRM"="CONFIRM";
+"COMMENT1"="COMMENT";
+"COMMENT"="Write about your experience . We are always  glad to hear from you .";
+"Submit"="SUBMIT";
+"PLEASE_RATE"="Please give rating to driver.";
+
+///// PickUpVC
+"PICK ME UP"="MY LOCATION";
+"GET FARE ESTIMATE"="FARE ESTIMATE";
+"MIN FARE"="MIN FARE";
+"ETA"="ETA";
+"MAX SIZE"="MAX SIZE";
+"Select Your Payment Type"="Select Your Payment Type";
+"Request"="REQUEST";
+"SELECT SERVICE YOU NEED"="SELECT SERVICE TYPE";
+"SEARCH"="Type pickup location";
+"REQUESTING"="Contacting near by driver...";
+"RATE CARD"="RATE CARD";
+"Base Price :"="Base Price :";
+"Distance Cost :"="Distance Cost(Per km) :";
+"Time Cost :"="Time Cost(Per min) :";
+"Rate_card_note"="Airport rates may differ.Peak time charges may apply.";
+
+
+
+///// ProviderDetailsVC
+"Min"="min";
+"CALL"="CALL"; 
+"DRIVER ACCEPTED THE JOB"="Driver accepted The Job.";
+"DRIVER HAS ARRIVED AT YOUR PLACE"="Driver has arrived at your place";
+"YOUR TRIP HAS BEEN STARTED"="Your trip has been started.";
+"DRIVER HAS STARTED TOWARDS YOU"="Driver has started moving towards you";
+"YOUR TRIP IS COMPLETED"="Your trip is completed .";
+"DRIVER ACCEPTED THE JOB"="Driver accepted the Job.";
+"Promo Code"="Promo Code";
+"Enter Promo Code"="Enter Promo Code";
+"APPLY"="APPLY";
+"Card"="Card";
+"Cash"="Cash";
+"Please Promo"="Please enter promo code.";
+"CANCEL_REQUEST"="Are you sure, you wan't to cancel request ?";
+
+
+// ERROR CODE :
+
+"1"="This Email is not Registered";
+"2"="Name is required.";
+"3"="Age is required.";
+"4"="Breed is required";
+"5"="Seassion token was expired.";
+"6"="Your unique id is missing.";
+"7"="Image is required.";
+"8"="Invalid Input";
+"9"="Token Expired.";
+"10"="Owner ID not Found";
+"11"="Not a valid token.";
+"12"="No Dogs Found";
+"13"="Driver not Found";
+"14"="PayPal unique id is missing.";
+
+"15"="Contact numbers are required.";
+"16"="Your ETA is required.";
+"17"="No Credit Found";
+"18"="Successfully Log-Out.";
+"19"="Id of Request is required";
+"20"="Already Rated";
+"21"="Walk is not completed";
+"22"="Walk ID doesnot matches with Dog ID";
+"23"="Walk ID Not Found";
+"24"="Invalid Phone Number";
+"25"="Phone number must be required.";
+"26"="Social Login unique id must be required.";
+"27"="Email ID already Registred";
+"28"="Password field is required.";
+"29"="Email field is required";
+"30"="First Name field is required.";
+"31"="Last Name field is required.";
+"32"="Push notification token is required.";
+"33"="Device type must be android or ios";
+"34"="Login type is required.";
+"35"="Login by mismatch";
+"36"="Invalid Username and Password.";
+"37"="Not a Registered User.";
+"38"="Not a valid social registration User";
+"39"="Card number\'s last four digits are missing.";
+"40"="Unique payment token is missing.";
+
+
+"41"="Could not create client ID.";
+"42"="Unique card ID is missing.";
+"43"="Card ID and User ID Doesnot matches";
+"44"="Card not found.";
+"45"="This user does not have a referral code";
+"46"="No Card Found.";
+"47"="Invalid Old Password.";
+"48"="Old Password must not be blank.";
+"49"="location points are missing.";
+"50"="UserID not Found.";
+
+"51"="Request ID doesnot matches withUser ID.";
+"52"="Request ID Not Found.";
+"53"="User ID not Found.";
+"54"="No walker found.";
+"55"="No Service Provider found matching the service type";
+"56"="No Service Provider found.";
+"57"="Selected provider\'s unique id is missing.";
+"58"="Your previous Request is Pending.";
+"59"="Please add card first for payment.";
+"60"="No Service Provider found matching the service type for scheduled request.";
+
+"61"="Invalid Promo Code.";
+"62"="You can not apply multiple code for single trip.";
+"63"="Promotional code successfully applied.";
+"64"="Promotional code is not available.";
+"65"="Promotional code already used.";
+"66"="Promotion feature is not active on card payment.";
+"67"="Promotion feature is not active on cash payment.";
+"68"="Promotion feature is not active.";
+"69"="You can\'t apply promotional code without creating request.";
+"70"="Payment mode is paypal.";
+
+"71"="No Service Provider found for the selected service in your area currently.";
+"72"="You are already in debt.";
+"73"="Distance is required.";
+"74"="Time is required.";
+"75"="Request ID doesnot matches with User ID.";
+"76"="On going Trip.";
+"77"="No on going Trip found.";
+"78"="Searching for Service Providers.";
+"79"="No Service Providers are available currently. Please try after sometime.";
+"80"="Service Provider not Confirmed yet.";
+
+
+
+"81"="No Service Provider found around you.";
+"82"="Time-Zone is required.";
+"83"="Schedule date and time must be required.";
+"84"="Sorry, You can\'t create schedule morethen two week faar from today.";
+"85"="update successfully";
+"86"="Payment mode not updated.";
+"87"="Destination Set Successfully.";
+"88"="Sorry You can\'t create event earlier then 14 days.";
+"89"="Yo have invited maximum members for event.";
+"90"="Please change braintree as default gateway.";
+
+
+"91"="Sorry, You have apready apply the refereel code.";
+"92"="Referral process successfully completed.";
+"93"="Sorry, You can\'t apply your refereel code.";
+"94"="Invalid referral code.";
+"95"="You have skipped for referral process.";
+"96"="No Dog Found.";
+"97"="Payment type must be required.";
+"98"="Event Unique Id is missing.";
+"99"="Sorry you can\'t delte past or ongoing event.";
+"100"="Event not found.";
+"101"="Event successfully deleted.";
+
+
+
+
+
