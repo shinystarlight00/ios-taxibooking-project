@@ -218,33 +218,30 @@
 }
 - (IBAction)addPaymentBtnPressed:(id)sender
 {
-    if(self.txtCreditCard.text.length<1 || self.txtmm.text.length<1 || self.txtyy.text.length<1 || self.txtCvv.text.length<1)
+    if(self.txtCreditCard.text.length < 1 || self.txtmm.text.length < 1 || self.txtyy.text.length < 1 || self.txtCvv.text.length < 1)
     {
-        if(self.txtCreditCard.text.length<1)
+        if(self.txtCreditCard.text.length < 1)
         {
-            [[UtilityClass sharedObject]showAlertWithTitle:@"" andMessage:NSLocalizedString(@"PLEASE_CREDIT_CARD_NUMBER", nil)];
+            [[UtilityClass sharedObject] showAlertWithTitle:@"" andMessage:NSLocalizedString(@"PLEASE_CREDIT_CARD_NUMBER", nil)];
         }
-        else if(self.txtmm.text.length<1)
+        else if(self.txtmm.text.length < 1)
         {
-            [[UtilityClass sharedObject]showAlertWithTitle:@"" andMessage:NSLocalizedString(@"PLEASE_MONTH", nil)];
+            [[UtilityClass sharedObject] showAlertWithTitle:@"" andMessage:NSLocalizedString(@"PLEASE_MONTH", nil)];
         }
-        else if(self.txtyy.text.length<1)
+        else if(self.txtyy.text.length < 1)
         {
-            [[UtilityClass sharedObject]showAlertWithTitle:@"" andMessage:NSLocalizedString(@"PLEASE_YEAR", nil)];
+            [[UtilityClass sharedObject] showAlertWithTitle:@"" andMessage:NSLocalizedString(@"PLEASE_YEAR", nil)];
         }
-        else if(self.txtCvv.text.length<1)
+        else if(self.txtCvv.text.length < 1)
         {
-            [[UtilityClass sharedObject]showAlertWithTitle:@"" andMessage:NSLocalizedString(@"PLESE_CVV", nil)];
+            [[UtilityClass sharedObject] showAlertWithTitle:@"" andMessage:NSLocalizedString(@"PLEASE_CVV", nil)];
         }
     }
     else
     {
         [self onClickforHidePview:nil];
-        [[AppDelegate sharedAppDelegate]showLoadingWithTitle:@"Adding Card..."];
-        if (![self.paymentView isValid])
-        {
-            // return;
-        }
+        [[AppDelegate sharedAppDelegate] showLoadingWithTitle:@"Adding Card..."];
+        
         if (![Stripe defaultPublishableKey])
         {
             UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"No Publishable Key"
@@ -255,30 +252,36 @@
             [message show];
             return;
         }
-        
-        STPCard *card = [[STPCard alloc] init];
-        
-        card.number =self.txtCreditCard.text;
-        card.expMonth =[self.txtmm.text integerValue];
-        card.expYear = [self.txtyy.text integerValue];
-        card.cvc = self.txtCvv.text;
-        
-        [Stripe createTokenWithCard:card completion:^(STPToken *token, NSError *error) {
+
+        STPPaymentMethodCardParams *cardParams = [[STPPaymentMethodCardParams alloc] init];
+        cardParams.number = self.txtCreditCard.text;
+        cardParams.expMonth = @(self.txtmm.text.integerValue);
+        cardParams.expYear = @(self.txtyy.text.integerValue);
+        cardParams.cvc = self.txtCvv.text;
+
+        STPPaymentMethodBillingDetails *billingDetails = [[STPPaymentMethodBillingDetails alloc] init];
+        // Optionally add billing details like name, address, etc.
+
+        STPPaymentMethodParams *paymentMethodParams = [STPPaymentMethodParams paramsWithCard:cardParams
+                                                                         billingDetails:billingDetails
+                                                                               metadata:nil];
+
+        STPAPIClient *client = [STPAPIClient sharedClient];
+        [client createPaymentMethodWithParams:paymentMethodParams
+                                   completion:^(STPPaymentMethod *paymentMethod, NSError *error) {
             if (error) {
                 [[AppDelegate sharedAppDelegate] hideLoadingView];
                 [self hasError:error];
             } else {
-                [self hasToken:token];
-                strForLastFour=token.card.last4;
-                
-                strForStripeToken=token.tokenId;
-                //[APPDELEGATE showLoadingWithTitle:@"Adding Card"];
-                [self addCardOnServer];
+                NSLog(@"Payment method created: %@", paymentMethod.stripeId);
+                strForLastFour = paymentMethod.card.cardDetails.last4;
+                strForStripeToken = paymentMethod.stripeId;
+                [self addCardOnServer]; // Your function to send token to server
             }
         }];
     }
-    
 }
+
 - (void)hasToken:(STPToken *)token
 {
     NSLog(@"%@",token.tokenId);
@@ -292,78 +295,84 @@
 
 -(void)GenerateToken:(NSString *)cardNumber ExpMonth:(NSString *)month ExpYear:(NSString *)year CVV:(NSString *)cvv
 {
-    [[AppDelegate sharedAppDelegate]showLoadingWithTitle:@"Adding Card..."];
-    STPCard *card = [[STPCard alloc] init];
-    card.number =cardNumber ;
-    card.expMonth =[month integerValue];
-    card.expYear = [year integerValue];
-    card.cvc=cvv;
-    [[AppDelegate sharedAppDelegate]showLoadingWithTitle:@"Adding Card..."];
-    [Stripe createTokenWithCard:card completion:^(STPToken *token, NSError *error) {
+    [[AppDelegate sharedAppDelegate] showLoadingWithTitle:@"Adding Card..."];
+    
+    // Create the card parameters
+    STPPaymentMethodCardParams *cardParams = [[STPPaymentMethodCardParams alloc] init];
+    cardParams.number = cardNumber;
+    cardParams.expMonth = @([month integerValue]); // Wrap the month as NSNumber
+    cardParams.expYear = @([year integerValue]);   // Wrap the year as NSNumber
+    cardParams.cvc = cvv;
+    
+    // Wrap the card params into a payment method params
+    STPPaymentMethodParams *paymentMethodParams = [STPPaymentMethodParams paramsWithCard:cardParams
+                                                                          billingDetails:nil // Optional billing details
+                                                                                metadata:nil]; // Optional metadata
+
+    // Tokenize the payment method params (this will replace the older STPCard method)
+    [[STPAPIClient sharedClient] createTokenWithPaymentMethod:paymentMethodParams.card completion:^(STPToken *token, NSError *error) {
+        [[AppDelegate sharedAppDelegate] hideLoadingView]; // Ensure loading view is hidden
+        
         if (error) {
-            [[AppDelegate sharedAppDelegate] hideLoadingView];
-            [self hasError:error];
+            [self hasError:error]; // Handle error
         } else {
-            [self hasToken:token];
-            NSLog(@"%@", token);
-          
-            //[APPDELEGATE showLoadingWithTitle:@"Adding Card"];
-            [self addCardOnServer];
+            [self hasToken:token];  // Handle successful tokenization
+            NSLog(@"Token: %@", token.tokenId); // Log the token ID
+            
+            [self addCardOnServer];  // Call the method to add card on the server
         }
     }];
 }
 
+
 #pragma mark -
 #pragma mark - WS Methods
 
--(void)addCardOnServer
+- (void)addCardOnServer
 {
+    NSLog(@"Last four digits: %@", strForLastFour);
+    [[AppDelegate sharedAppDelegate] showLoadingWithTitle:@"Adding Card"];
     
-    NSLog(@"lastfour%@",strForLastFour);
-
-    [[AppDelegate sharedAppDelegate]showLoadingWithTitle:@"Adding Card"];
-    NSMutableDictionary *dictParam=[[NSMutableDictionary alloc]init];
+    NSMutableDictionary *dictParam = [[NSMutableDictionary alloc] init];
     [dictParam setObject:[PREF objectForKey:PREF_USER_ID] forKey:PARAM_ID];
     [dictParam setObject:[PREF objectForKey:PREF_USER_TOKEN] forKey:PARAM_TOKEN];
-   // [dictParam setObject:StripePublishableKey forKey:PARAM_TOKEN];
-    //[dictParam setObject:strForStripeToken forKey:@"payment_token"];
-    [dictParam setObject:self.txtCreditCard.text forKey:@"payment_token"];
+    
+    // Use the Stripe token generated instead of the raw credit card number
+    [dictParam setObject:strForStripeToken forKey:@"payment_token"];
     [dictParam setObject:strForLastFour forKey:@"last_four"];
     [dictParam setObject:self.txtmm.text forKey:@"exp_month"];
     [dictParam setObject:self.txtyy.text forKey:@"exp_year"];
-    [dictParam setObject:self.txtCvv.text forKey:@"cvc"];
-    NSLog(@"dictparam for payemnt :%@",dictParam);
+    [dictParam setObject:self.txtCvv.text forKey:@"cvc"]; // Optionally, you may not need to send CVC if you're using tokens.
+
+    NSLog(@"Parameters for payment: %@", dictParam);
     
-    AFNHelper *afn=[[AFNHelper alloc]initWithRequestMethod:POST_METHOD];
-    [afn getDataFromPath:FILE_ADD_CARD withParamData:dictParam withBlock:^(id response, NSError *error)
-     {
-         [APPDELEGATE hideLoadingView];
-         if(response)
-         {
-             if ([[response valueForKey:@"success"] boolValue])
-             {
-                 [[AppDelegate sharedAppDelegate] hideLoadingView];
-                 [APPDELEGATE showToastMessage:@"Card added successfully."];
-                 [self.navigationController popToRootViewControllerAnimated:YES];
-             }
-             else
-             {
-                 //[[AppDelegate sharedAppDelegate] hideLoadingView];
-                 //[APPDELEGATE showToastMessage:@"Failed to add card."];
-                 
-                 NSString *str=[NSString stringWithFormat:@"%@",[response valueForKey:@"error_code"]];
-                 if([str isEqualToString:@"21"])
-                 {
-                     //[self performSegueWithIdentifier:SEGUE_TO_UNWIND sender:self];
-                 }
-                 else
-                 {
-                     [[UtilityClass sharedObject] showAlertWithTitle:@"" andMessage:[response valueForKey:@"strip_msg"]];
-                 }
-             }
-         }
-     }];
+    AFNHelper *afn = [[AFNHelper alloc] initWithRequestMethod:POST_METHOD];
+    [afn getDataFromPath:FILE_ADD_CARD withParamData:dictParam withBlock:^(id response, NSError *error) {
+        [[AppDelegate sharedAppDelegate] hideLoadingView];
+        
+        if (error) {
+            [[UtilityClass sharedObject] showAlertWithTitle:@"Error" andMessage:error.localizedDescription];
+            return;
+        }
+        
+        if (response) {
+            if ([[response valueForKey:@"success"] boolValue]) {
+                [[AppDelegate sharedAppDelegate] hideLoadingView];
+                [APPDELEGATE showToastMessage:@"Card added successfully."];
+                [self.navigationController popToRootViewControllerAnimated:YES];
+            } else {
+                NSString *errorMessage = [response valueForKey:@"strip_msg"];
+                if (!errorMessage) {
+                    errorMessage = @"Failed to add card.";
+                }
+                [[UtilityClass sharedObject] showAlertWithTitle:@"" andMessage:errorMessage];
+            }
+        } else {
+            [[UtilityClass sharedObject] showAlertWithTitle:@"Error" andMessage:@"No response from server."];
+        }
+    }];
 }
+
 
 - (void)didReceiveMemoryWarning
 {

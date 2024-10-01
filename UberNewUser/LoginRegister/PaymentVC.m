@@ -99,20 +99,25 @@
         return;
     }
     
-    STPCard *card = [[STPCard alloc] init];
-    card.number = self.paymentView.card.number;
-    card.expMonth = self.paymentView.card.expMonth;
-    card.expYear = self.paymentView.card.expYear;
-    card.cvc = self.paymentView.card.cvc;
-    [Stripe createTokenWithCard:card completion:^(STPToken *token, NSError *error)
-     {
-         if (error) {
-             [self hasError:error];
-         } else {
-             [self hasToken:token];
-             [self addCardOnServer];
-         }
-     }];
+    STPPaymentMethodCardParams *cardParams = [[STPPaymentMethodCardParams alloc] init];
+    cardParams.number = self.paymentView.card.number;
+    cardParams.expMonth = @(self.paymentView.card.expMonth);
+    cardParams.expYear = @(self.paymentView.card.expYear);
+    cardParams.cvc = self.paymentView.card.cvc;
+
+    STPPaymentMethodParams *paymentMethodParams = [STPPaymentMethodParams paramsWithCard:cardParams
+                                                                        billingDetails:nil
+                                                                              metadata:nil];
+
+    [[STPAPIClient sharedClient] createPaymentMethodWithParams:paymentMethodParams
+                                                completion:^(STPPaymentMethod *paymentMethod, NSError *error) {
+        if (error) {
+            [self hasError:error];  // Handle the error case
+        } else {
+            [self hasPaymentMethod:paymentMethod];  // Use the payment method
+            [self addCardOnServer];  // Continue processing (e.g., backend integration)
+        }
+    }];
 }
 
 - (IBAction)backBtnPressed:(id)sender
@@ -130,13 +135,14 @@
     [message show];
 }
 
-- (void)hasToken:(STPToken *)token
-{
-    NSLog(@"%@",token.tokenId);
-    NSLog(@"%@",token.card.last4);
+- (void)hasPaymentMethod:(STPPaymentMethod *)paymentMethod {
+    NSLog(@"Payment Method ID: %@", paymentMethod.stripeId);
+    NSLog(@"Last 4 digits: %@", paymentMethod.card.cardDetails.last4);
     
-    strForLastFour=token.card.last4;
-    strForStripeToken=token.tokenId;
+    strForLastFour = paymentMethod.card.cardDetails.last4;
+    strForStripeToken = paymentMethod.stripeId;  // Use payment method ID instead of token
+
+    // Dismiss the view controller after handling payment method
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     return;
 }
